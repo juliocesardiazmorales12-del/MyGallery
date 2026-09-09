@@ -1,0 +1,217 @@
+.album {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 3rem 1.5rem 4rem;
+  background: linear-gradient(180deg, #fff5f7 0%, #fdf1e6 100%);
+  color: #3a2c2c;
+}
+
+.dedication {
+  position: relative;
+  max-width: 640px;
+  text-align: center;
+  margin-bottom: 3rem;
+  padding: 0 3.5rem;
+}
+
+.flower {
+  width: 72px;
+  height: 84px;
+  overflow: visible;
+}
+
+.flower-left {
+  position: absolute;
+  top: -1.5rem;
+  left: -0.5rem;
+  transform: rotate(-18deg);
+}
+
+.flower-right {
+  position: absolute;
+  top: -1.5rem;
+  right: -0.5rem;
+  transform: rotate(18deg) scaleX(-1);
+}
+
+.flower-footer {
+  width: 44px;
+  height: 52px;
+  margin: 0 auto 0.25rem;
+}
+
+@media (max-width: 560px) {
+  .dedication {
+    padding: 0 1.5rem;
+  }
+
+  .flower-left,
+  .flower-right {
+    width: 48px;
+    height: 56px;
+    top: -0.75rem;
+  }
+
+  .flower-left {
+    left: -0.75rem;
+  }
+
+  .flower-right {
+    right: -0.75rem;
+  }
+}
+
+.eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  font-size: 0.75rem;
+  color: #c98a8a;
+  margin: 0 0 0.5rem;
+}
+
+.dedication h1 {
+  font-family: 'Georgia', 'Times New Roman', serif;
+  font-size: 2.5rem;
+  margin: 0 0 0.5rem;
+  color: #8a3b3b;
+}
+
+.since {
+  font-size: 0.95rem;
+  color: #a97b7b;
+  margin: 0 0 1.25rem;
+}
+
+.dedication-text {
+  font-size: 1.05rem;
+  line-height: 1.6;
+  font-style: italic;
+  color: #5a4444;
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.5rem;
+  width: 100%;
+  max-width: 1100px;
+}
+
+.card {
+  margin: 0;
+  background: #fff;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 6px 18px rgba(138, 59, 59, 0.12);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 28px rgba(138, 59, 59, 0.2);
+}
+
+.card-image {
+  aspect-ratio: 4 / 5;
+  background: #f6e4e4;
+}
+
+.card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.card-placeholder {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  color: #b98f8f;
+  padding: 1rem;
+  text-align: center;
+}
+
+.card-placeholder span {
+  font-size: 2rem;
+}
+
+.card-placeholder small {
+  font-size: 0.7rem;
+  line-height: 1.3;
+}
+
+.card figcaption {
+  padding: 0.85rem 1rem;
+  font-size: 0.95rem;
+  color: #6b4b4b;
+  text-align: center;
+}
+
+.footer {
+  margin-top: 3rem;
+  font-size: 0.9rem;
+  color: #a97b7b;
+}
+
+.music {
+  position: fixed;
+  bottom: 1.5rem;
+  right: 1.5rem;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.4rem;
+}
+
+.music-button {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  border: none;
+  background: #c98a8a;
+  color: #fff;
+  font-size: 1.4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 6px 18px rgba(138, 59, 59, 0.3);
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.music-button:hover {
+  transform: scale(1.06);
+  background: #b97575;
+}
+
+.music-button.is-playing .music-note {
+  animation: spin 3.5s linear infinite;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.music-hint {
+  max-width: 180px;
+  text-align: right;
+  font-size: 0.7rem;
+  color: #a97b7b;
+  background: #fff;
+  padding: 0.4rem 0.6rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(138, 59, 59, 0.15);
+}
