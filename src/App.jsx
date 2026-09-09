@@ -4,7 +4,6 @@ import './App.css'
 // Edita estos datos con su historia y sus fotos.
 const COUPLE = {
   names: 'Julio & Cesia',
-  since: 'No existe un manual para amar pero si existe mejorar por quien quieres en tu vida',
   dedication:
     'Entre risas, abrazos y locuras encontré mi lugar favorito: a tu lado. Este álbum es apenas una pequeña parte de todo lo que hemos vivido juntos, y una promesa de todo lo que aún nos falta por vivir. Te amo, hoy y siempre.',
 }
