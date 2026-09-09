@@ -4,13 +4,19 @@ import './App.css'
 // Edita estos datos con su historia y sus fotos.
 const COUPLE = {
   names: 'Julio & Cesia',
-  since: '2020',
+  since: 'No existe un manual para amar pero si existe mejorar por quien quieres en tu vida',
   dedication:
     'Entre risas, abrazos y locuras encontré mi lugar favorito: a tu lado. Este álbum es apenas una pequeña parte de todo lo que hemos vivido juntos, y una promesa de todo lo que aún nos falta por vivir. Te amo, hoy y siempre.',
 }
 
 // Coloca tu canción en /public/music/ (mp3) y pon aquí su nombre de archivo.
 const SONG_SRC = '/music/cancion.mp3'
+
+// Convierte una ruta como "/images/foto.jpg" en una ruta válida sin importar
+// si el sitio vive en la raíz del dominio o en una subcarpeta (GitHub Pages).
+function withBase(path) {
+  return import.meta.env.BASE_URL + path.replace(/^\//, '')
+}
 
 // Para agregar una foto: coloca el archivo en /public/images/ y agrega
 // una entrada aquí con su ruta ("/images/nombre.jpg") y un texto.
@@ -75,7 +81,7 @@ function PhotoCard({ src, caption, focus }) {
           </div>
         ) : (
           <img
-            src={src}
+            src={withBase(src)}
             alt={caption}
             style={focus ? { objectPosition: focus } : undefined}
             onError={() => setBroken(true)}
@@ -149,7 +155,7 @@ function MusicButton() {
 
   return (
     <div className="music">
-      <audio ref={audioRef} src={SONG_SRC} loop onError={() => setMissing(true)} />
+      <audio ref={audioRef} src={withBase(SONG_SRC)} loop onError={() => setMissing(true)} />
       <button
         type="button"
         className={`music-button${playing ? ' is-playing' : ''}`}
